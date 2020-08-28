@@ -3,7 +3,7 @@ DependsOn: MyMountTarget        # This is needed if an AWS::EFS::MountTarget res
 Properties:
   Handler: index.handler
   Runtime: python3.6
-  CodeUri: helloworld/function.py
+  CodeUri: helloworld
   ReservedConcurrentExecutions: 30
   Layers:
     - Ref: MyLayer
