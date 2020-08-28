@@ -1,9 +1,8 @@
 Type: AWS::Serverless::Function
-DependsOn: MyMountTarget        # This is needed if an AWS::EFS::MountTarget resource is declared for EFS
 Properties:
   Handler: index.handler
   Runtime: python3.6
-  CodeUri: helloworld
+  CodeUri: ./helloworld
   ReservedConcurrentExecutions: 30
   Layers:
     - Ref: MyLayer
