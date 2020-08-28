@@ -3,17 +3,3 @@ Properties:
   Handler: index.handler
   Runtime: python3.6
   CodeUri: ./helloworld
-  ReservedConcurrentExecutions: 30
-  Layers:
-    - Ref: MyLayer
-  Tracing: Active
-  Timeout: 120
-  Policies:
-    - AWSLambdaExecute
-    - Version: '2012-10-17' 
-      Statement:
-        - Effect: Allow
-          Action:
-            - s3:GetObject
-            - s3:GetObjectACL
-          Resource: 'arn:aws:s3:::codepipeline-ap-southeast-1-647973046085/*'
