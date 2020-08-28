@@ -3,15 +3,13 @@ DependsOn: MyMountTarget        # This is needed if an AWS::EFS::MountTarget res
 Properties:
   Handler: index.handler
   Runtime: python3.6
-  InlineCode: |
-    def handler(event, context):
-      print("Hello, world!")
+  CodeUri: helloworld/function.py
   ReservedConcurrentExecutions: 30
   Layers:
     - Ref: MyLayer
   Tracing: Active
   Timeout: 120
-  FileSystemConfigs:
+  FileSystemConfigs:g
     - Arn: !Ref MyEfsFileSystem
       LocalMountPath: /mnt/EFS
   Policies:
