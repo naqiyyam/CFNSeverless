@@ -1,5 +1,10 @@
-Type: AWS::Serverless::Function
-Properties:
-  Handler: index.handler
-  Runtime: python3.6
-  CodeUri: ./helloworld
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: A starter AWS Lambda function.
+
+ Resources:
+  Type: AWS::Serverless::Function
+  Properties:
+    Handler: index.handler
+    Runtime: python3.6
+    CodeUri: ./helloworld
